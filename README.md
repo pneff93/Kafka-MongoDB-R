@@ -1,5 +1,7 @@
 # Kafka-MongoDB-R
 
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 ![](image.png)
 This small tutorial creates a data pipeline from Apache Kafka over MongoDB into R.
 It focuses on simplicity and can be seen as a baseline for similar projects.
@@ -80,3 +82,7 @@ Under `/home` you can run `GetData.R`. It connects to MongoDB using the package 
 * [Confluent Hub MongoDB Connector](https://www.confluent.io/hub/mongodb/kafka-connect-mongodb)
 * [MongoDB Connector Configuration Properties](https://docs.mongodb.com/kafka-connector/current/kafka-sink-properties/)
 * [mongolite Package](https://cran.r-project.org/web/packages/mongolite/mongolite.pdf)
+
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/patrick-neff-7bb3b21a4/
