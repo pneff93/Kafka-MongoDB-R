@@ -8,6 +8,7 @@ It focuses on simplicity and can be seen as a baseline for similar projects.
 
 ## Prerequisites
 
+* [docker](https://docs.docker.com/get-docker/)
 * [docker-compose](https://docs.docker.com/compose/install/)
 * [MongoDB Compass](https://www.mongodb.com/try/download/compass)
 
@@ -18,7 +19,9 @@ docker-compose up -d
 
 It starts:
 * Zookeeper
-* Kafka Broker
+* Kafka Broker 
+* Kafka Producer
+  * built docker image executing fatJar
 * Kafka Connect
     * with MongoDB Source and Sink Connector
 * MongoDB 
@@ -27,18 +30,6 @@ It starts:
 ## Kafka Producer
 
 The Kafka Producer produces fake events of a driving truck into the topic `truck-topic` in `JSON` format every two seconds.
-Run KafkaProducer:
-```
-cd KafkaProducer
-```
-**Linux:**
-```
-./gradlew run
-```
-**Windows:**
-```
-gradlew.bat run
-```
 Verify that data is produced correctly:
 ```
 docker-compose exec broker bash

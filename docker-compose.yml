@@ -29,6 +29,13 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
+  kafkaProducer:
+    image: kafkaproducer:0.1.0
+    build: ./KafkaProducer
+    container_name: kafkaProducer
+    depends_on:
+      - broker
+
   connect:
     image: confluentinc/cp-kafka-connect-base:6.1.1
     hostname: connect
@@ -51,7 +58,7 @@ services:
       CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
       CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
       CONNECT_CONNECTOR_CLIENT_CONFIG_OVERRIDE_POLICY: All
-      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+      CONNECT_PLUGIN_PATH: "/usr/share/confluent-hub-components"
     volumes:
       - ./mongodb-kafka-connect-mongodb-1.5.0:/usr/share/confluent-hub-components/
 
