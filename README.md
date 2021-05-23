@@ -52,7 +52,7 @@ Verify that the connector is up and running:
 ```
 curl localhost:8083/connectors/TestData/status | jq
 ```
-![](KafkaConnect.gif)
+
 
 ## MongoDB 
 Start MongoDB Compass and create a new connection with:
