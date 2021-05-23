@@ -35,6 +35,7 @@ Verify that data is produced correctly:
 docker-compose exec broker bash
 kafka-console-consumer --bootstrap-server broker:9092 --topic truck-topic
 ```
+![](KafkaProducer.gif)
 
 ## Kafka Connect
 
@@ -51,6 +52,7 @@ Verify that the connector is up and running:
 ```
 curl localhost:8083/connectors/TestData/status | jq
 ```
+![](KafkaConnect.gif)
 
 ## MongoDB 
 Start MongoDB Compass and create a new connection with:
@@ -62,6 +64,7 @@ or
 URI: mongodb://user:password@localhost:27017/admin
 ```
 You should see a database `TruckData` with a collection `truck_1` having data stored.
+![](MongoDB.gif)
 
 ## RStudio
 Open RStudio via:
@@ -71,6 +74,8 @@ localhost:8787
 The username is `user` and password `password`.
 
 Under `/home` you can run `GetData.R`. It connects to MongoDB using the package `mongolite` and requests the data.
+
+![](RStudio.gif)
 
 ## Sources
 
