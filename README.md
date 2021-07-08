@@ -2,7 +2,8 @@
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-![](image.png)
+![](overview.png)
+
 This small tutorial creates a data pipeline from Apache Kafka over MongoDB into R.
 It focuses on simplicity and can be seen as a baseline for similar projects.
 
@@ -21,9 +22,9 @@ It starts:
 * Zookeeper
 * Kafka Broker 
 * Kafka Producer
-  * built docker image executing fatJar
+  * built docker image executing fat JAR
 * Kafka Connect
-    * with MongoDB Source and Sink Connector
+    * with [MongoDB Connector](https://www.confluent.io/hub/mongodb/kafka-connect-mongodb)
 * MongoDB 
 * RStudio
 
@@ -35,12 +36,13 @@ Verify that data is produced correctly:
 docker-compose exec broker bash
 kafka-console-consumer --bootstrap-server broker:9092 --topic truck-topic
 ```
+
 ![](KafkaProducer.gif)
 
 ## Kafka Connect
 
 We use Kafka Connect to transfer the data from Kafka to MongoDB.
-Verify that the MongoDB Source and Sink connector is added to Kafka Connect correctly:
+Verify that the MongoDB Source and Sink Connector is added to Kafka Connect correctly:
 ```
 curl -s -XGET http://localhost:8083/connector-plugins | jq '.[].class'
 ```
@@ -64,6 +66,7 @@ or
 URI: mongodb://user:password@localhost:27017/admin
 ```
 You should see a database `TruckData` with a collection `truck_1` having data stored.
+
 ![](MongoDB.gif)
 
 ## RStudio
@@ -73,7 +76,7 @@ localhost:8787
 ```
 The username is `user` and password `password`.
 
-Under `/home` you can run `GetData.R`. It connects to MongoDB using the package `mongolite` and requests the data.
+Under `/home` you can run `GetData.R`. It connects to MongoDB using the package [mongolite](https://cran.r-project.org/web/packages/mongolite/mongolite.pdf) and requests the data.
 
 ![](RStudio.gif)
 
