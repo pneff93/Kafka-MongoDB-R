@@ -6,7 +6,7 @@
 
 This small tutorial creates a data pipeline from Apache Kafka over MongoDB into R.
 It focuses on simplicity and can be seen as a baseline for similar projects.
-You can read more about in my blog article: 
+You can read more about it in my blog article: 
 [Create a Data Analysis Pipeline with Apache Kafka and RStudio](https://www.confluent.io/de-de/blog/data-analytics-pipeline-with-kafka-and-rstudio/).
 
 
